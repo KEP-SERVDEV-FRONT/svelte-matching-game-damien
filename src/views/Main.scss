@@ -1,0 +1,13 @@
+.main {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.wrap-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 20px;
+}

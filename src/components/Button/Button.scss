@@ -1,0 +1,74 @@
+@import "src/assets/styles/utils/variables.scss";
+
+.btn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 5px outset $color-blueviolet;
+  font-weight: 700;
+  font-size: 18px;
+  color: $color-white;
+  background-color: $color-blueviolet;
+  text-align: center;
+  line-height: 40px;
+  transition: opacity .2s;
+
+  &:hover {
+    opacity: .85;
+  }
+
+  &:active {
+    border-style: inset;
+    line-height: 45px;
+  }
+
+  &-easy {
+    border-color: $color-cornblue;
+    background-color: $color-cornblue;
+
+    &:active {
+      border-color: $color-cornblue;
+    }
+  }
+
+  &-hard {
+    border-color: $color-crimson;
+    background-color: $color-crimson;
+
+    &:active {
+      border-color: $color-crimson;
+    }
+  }
+
+  &-custom {
+    min-width: 130px;
+    padding: 0 20px;
+    border-color: rgb(195, 0, 255);
+    background-color: rgb(195, 0, 255);
+    background: linear-gradient(132deg, rgb(195, 0, 255) 9%, rgb(255, 72, 16) 82%);
+
+    &:active {
+      border-color: rgb(255, 72, 16);
+    }
+  }
+
+  &-info {
+    border-color: $color-cyan;
+    background-color: $color-cyan;
+
+    &:active {
+      border-color: $color-cyan;
+    }
+  }
+
+  &-cancel {
+    border-color: mediumslateblue;
+    background: mediumslateblue;
+
+    &:active {
+      border-color: mediumslateblue;
+    }
+  }
+}

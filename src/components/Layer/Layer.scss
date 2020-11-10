@@ -1,0 +1,215 @@
+@import "src/assets/styles/utils/keyframes";
+@import "src/assets/styles/utils/variables";
+
+.layer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1000;
+
+  &-type {
+    &-deemed {
+      background-color: rgba(0, 0, 0, .2);
+    }
+
+    &-guide {
+      background-color: rgba(96, 125, 139, .85);
+    }
+  }
+
+  &-inner {
+    padding: 0 20px;
+  }
+
+  &-body {
+    .layer-type-guide & {
+      padding: 20px;
+      border-radius: 20px;
+      color: $color-black;
+      border: 5px solid $color-bluegray;
+      background-color: rgba(255, 255, 255, .8);
+    }
+  }
+
+  &-title {
+    display: block;
+    padding-top: 10px;
+    font-size: 24px;
+    color: $color-gold;
+    text-shadow: 1px 1px 1px  $color-black;
+  }
+
+  &-txt {
+    font-size: 16px;
+    line-height: 26px;
+
+    strong {
+      display: block;
+      padding-top: 10px;
+      color: $color-blueviolet;
+      line-height: 24px;
+    }
+  }
+
+  &-head {
+    padding: 20px;
+    border-radius: 40px;
+    border: 5px solid $color-bluegray;
+    background-color: $color-white;
+
+    .frame-bg {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      background-image: url(assets/images/c3.gif);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: 100%;
+    }
+
+    .head-title {
+      font-size: 18px;
+      color: $color-bluegray;
+    }
+
+    .head-txt {
+      padding-top: 5px;
+      font-weight: 700;
+      color: $color-mainblack;
+    }
+
+    &.is-complete {
+      border-color: $color-orangegold;
+
+      .is-custom & {
+        overflow: hidden;
+        position: relative;
+        padding: 25px;
+        border: 0;
+        background: linear-gradient(132deg, rgb(195, 0, 255) 9%, rgb(255, 72, 16) 82%);
+        z-index: 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          right: 5px;
+          bottom: 5px;
+          border-radius: 35px;
+          background: $color-white;
+          z-index: -1;
+        }
+      }
+
+      .frame-bg {
+        background-image: url(assets/images/c2.gif);
+
+        .is-custom & {
+          background-image: url(assets/images/c1.gif);
+        }
+      }
+
+      .head-title {
+        color: $color-orangegold;
+
+        .is-custom & {
+          color: $color-blueviolet;
+        }
+      }
+    }
+  }
+
+  &-field {
+    &-wrap {
+      padding: 10px;
+      border-radius: 20px;
+      border: 5px solid $color-orangegold;
+      background: #fff;
+
+      &:before {
+        content: '';
+        display: block;
+        height: 140px;
+        background: url(assets/images/c5.png);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: contain;
+      }
+    }
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+
+      &:not(:first-of-type) {
+        border-top: 1px solid #e2e2e2;
+      }
+
+      strong {
+        min-width: 80px;
+        text-align: left;
+      }
+
+      select {
+        width: 80px;
+        padding: 4px 10px;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+      }
+    }
+
+    &-controls {
+      padding-top: 20px;
+    }
+  }
+
+  .frame-intro {
+    width: 210px;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 5px solid $color-gold;
+    background-color: $color-white;
+    background-image: url(assets/images/img_g.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 232px;
+  }
+
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-style: oblique;
+  }
+
+  .ready {
+    color: $color-white;
+    animation: pop 1.2s linear;
+    opacity: 0;
+    text-shadow: 2px 2px 1px $color-blueviolet;
+  }
+
+  .start {
+    color: $color-orangered;
+    animation: pop .6s;
+    animation-delay: 1.5s;
+    opacity: 0;
+    text-shadow: 2px 2px 1px $color-white;
+  }
+}
+
+.box-controls {
+  padding-top: 20px;
+}

@@ -1,0 +1,7 @@
+@mixin bg-position($x, $y) {
+  background-position: #{$x} #{$y};
+
+  @include media-m {
+    background-position: #{$x / 2} #{$y / 2};
+  }
+}

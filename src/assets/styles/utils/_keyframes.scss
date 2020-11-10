@@ -1,0 +1,93 @@
+@keyframes stripes {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: 60px;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(2);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes toheaven {
+  0% {
+    transform: rotateY(60deg);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-3px) rotateY(90deg) scale(.9);
+    opacity: .8;
+  }
+  40% {
+    transform: translateY(-6px) rotateY(180deg) scale(.8);
+    opacity: .6;
+  }
+  60% {
+    transform: translateY(-9px) rotateY(360deg) scale(.7);
+    opacity: .4;
+  }
+  80% {
+    transform: translateY(-11px) rotateY(180deg) scale(.6);
+    opacity: .2;
+  }
+  100% {
+    transform: translateY(-13px) rotateY(90deg) scale(.5);
+    opacity: 0;
+  }
+}

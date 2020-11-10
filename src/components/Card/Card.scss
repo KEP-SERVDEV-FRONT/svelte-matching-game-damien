@@ -1,0 +1,189 @@
+@import "src/assets/styles/utils/variables";
+@import "src/assets/styles/utils/keyframes";
+@import "src/assets/styles/utils/mixins";
+
+.card {
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 14%;
+  height: 150px;
+  margin: 10px .5% 0;
+  border-radius: 20px;
+  transition: all ease .4s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  cursor: pointer;
+
+  @include media-m {
+    width: 24%;
+    height: 90px;
+  }
+
+  @include media-sm {
+    width: 19%;
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px 5px orange;
+    transition-duration: .2s;
+  }
+
+  &-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: $color-blueviolet;
+    background-color: $color-white;
+  }
+
+  &-index {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 5px solid $color-orangegold;
+    font-weight: 700;
+    font-size: 60px;
+    background-color: $color-gold;
+    background-image: $bg-pattern;
+    transform: rotateY(180deg);
+
+    @include media-m {
+      font-size: 30px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    font-size: 18px;
+    background-color: $color-white;
+    background-image: url(assets/images/sp-k.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    text-align: center;
+    opacity: 0;
+
+    @include media-m {
+      width: 75px;
+      height: 75px;
+      background-size: 450px;
+    }
+
+    .card-id1 & {
+      background-position: 0 0;
+    }
+
+    .card-id2 & {
+      @include bg-position(0, -150px);
+    }
+
+    .card-id3 & {
+      @include bg-position(0, -300px);
+    }
+
+    .card-id4 & {
+      @include bg-position(0, -450px);
+    }
+
+    .card-id5 & {
+      @include bg-position(0, -600px);
+    }
+
+    .card-id6 & {
+      @include bg-position(-750px, -600px);
+    }
+
+    .card-id7 & {
+      @include bg-position(-600px, -450px);
+    }
+
+    .card-id8 & {
+      @include bg-position(-150px, -150px);
+    }
+
+    .card-id9 & {
+      @include bg-position(-450px, -300px);
+    }
+
+    .card-id10 & {
+      @include bg-position(-150px, -450px);
+    }
+
+    .card-id11 & {
+      @include bg-position(-150px, -600px);
+    }
+
+    .card-id12 & {
+      @include bg-position(-300px, -750px);
+    }
+    
+    .card-id13 & {
+      @include bg-position(-300px, 0);
+    }
+
+    .card-id14 & {
+      @include bg-position(-750px, -750px);
+    }
+
+    .card-id15 & {
+      @include bg-position(-300px, -300px);
+    }
+// ==================
+    .card-id16 & {
+      @include bg-position(0, -750px);
+    }
+    .card-id17 & {
+      @include bg-position(-600px, -750px);
+    }
+    .card-id18 & {
+      @include bg-position(-450px, -600px);
+    }
+    .card-id19 & {
+      @include bg-position(-450px, 0);
+    }
+    .card-id20 & {
+      @include bg-position(-750px, -300px);
+    }
+    .card-id21 & {
+      @include bg-position(-600px, -150px);
+    }
+  }
+}
+
+.is-opened {
+  border-color: $color-blueviolet;
+  transform: rotateY(0deg);
+
+  &:hover,
+  .card-content {
+    opacity: 1;
+  }
+
+  .card-index {
+    opacity: 0;
+  }
+}
+
+.is-same {
+  cursor: default;
+  opacity: 0;
+  animation: toheaven .5s;
+
+  &:hover {
+    opacity: 0;
+  }
+}

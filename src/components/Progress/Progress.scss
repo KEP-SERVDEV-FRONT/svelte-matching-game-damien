@@ -1,0 +1,103 @@
+@import "src/assets/styles/utils/variables";
+@import "src/assets/styles/utils/keyframes";
+
+.progress {
+  overflow: hidden;
+  position: sticky;
+  top: 10px;
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  border: 5px solid $color-violet;
+  background-color: $color-tealpurple;
+  line-height: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .1) inset;
+  z-index: 100;
+
+  &-bar {
+    display: inline-block;
+    height: 100%;
+    background-color: $color-aquamarine;
+    background-size: 30px 30px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%,
+      transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%,
+      rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    vertical-align: top;
+    transition: all .3s;    
+
+    .warning & {
+      background-color: $color-gold;
+    }
+
+    .danger & {
+      background-color: $color-orangered;
+    }
+
+    .is-start & {
+      animation: stripes .6s linear infinite;
+    }
+
+    .is-done & {
+      background-color: $color-violet;
+      animation: none;
+    }
+
+    &-light {
+      position: absolute;
+      z-index: 100;
+      height: 4px;
+      width: 90%;
+      left: 5%;
+      top: 6px;
+      opacity: .3;
+
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $color-white;
+      }
+
+      &:before {
+        left: 0;
+        right: 10px;
+      }
+
+      &:after {
+        right: 0;
+        width: 6px;
+      }
+    }
+  }
+}
+
+.time {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 20px;
+  color: $color-white;
+  z-index: 100;
+  
+  &-info {
+    display: inline-block;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 10px;
+    background-color: rgba(128, 0, 128, .4);
+    line-height: 22px;
+    text-align: center;
+  }
+}
+
+.shake {
+  animation: shake .5s infinite;
+}
